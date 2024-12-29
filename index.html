@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=https://www.instagram.com/sumikumomo/profilecard/?igsh=MWR4OG04ejI1dXcwMw==">
-    <title>Redirigiendo...</title>
+    <meta http-equiv="refresh" content="3;url=https://www.instagram.com/sumikumomo/profilecard/?igsh=MWR4OG04ejI1dXcwMw==">
+    <title>Redirecting...</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Animación del fondo */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Contenedor de la rueda de carga */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 6px solid rgba(255, 255, 255, 0.2);
+            border-top: 6px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        /* Animación de la rueda */
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
 </head>
 <body>
-    <p>Redirigiendo a <a href="https://www.instagram.com/sumikumomo/profilecard/?igsh=MWR4OG04ejI1dXcwMw==">@sumikumomo</a></p>
+    <div class="spinner"></div>
 </body>
 </html>
