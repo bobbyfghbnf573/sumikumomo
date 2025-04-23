@@ -1,46 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=https://www.instagram.com/sumikumomo/profilecard/">
-    <title>Redirecting...</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
-            background-size: 400% 400%;
-            animation: gradient 8s ease infinite;
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 6px solid rgba(255, 255, 255, 0.2);
-            border-top: 6px solid white;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Redirigiendo a Instagram…</title>
+  <style>
+    body {
+      margin:0; height:100vh;
+      display:flex; align-items:center; justify-content:center;
+      font-family:Arial,sans-serif;
+      background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4);
+      background-size:400% 400%;
+      animation:gradient 8s ease infinite;
+    }
+    @keyframes gradient {
+      0%{background-position:0% 50%;}
+      50%{background-position:100% 50%;}
+      100%{background-position:0% 50%;}
+    }
+    .spinner {
+      width:50px; height:50px;
+      border:6px solid rgba(255,255,255,0.2);
+      border-top:6px solid white; border-radius:50%;
+      animation:spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform:rotate(360deg); }
+    }
+    .message {
+      position:absolute; bottom:30px; text-align:center;
+      color:white;
+      width:100%;
+    }
+    a.button {
+      display:inline-block;
+      padding:10px 20px;
+      background:rgba(255,255,255,0.3);
+      color:white; text-decoration:none;
+      border-radius:4px; margin-top:10px;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var profile = 'sumikumomo';
+      // 1) Intent URL para Android:
+      var intentUrl = 'intent://instagram.com/_u/' + profile +
+                      '/#Intent;package=com.instagram.android;scheme=https;end';
+      // 2) Universal Link / web URL:
+      var webUrl = 'https://www.instagram.com/' + profile + '/';
+      // Intento abrir la app (solo Android y navegadores que lo soporten)
+      setTimeout(function(){
+        window.location = intentUrl;
+      }, 100);
+      // Si tras 1500 ms seguimos, vamos al enlace web:
+      setTimeout(function(){
+        window.location = webUrl;
+      }, 1500);
+    });
+  </script>
 </head>
 <body>
-    <div class="spinner"></div>
+  <div class="spinner"></div>
+  <div class="message">
+    <p>Si no pasa nada, toca el botón para ir a Instagram:</p>
+    <a class="button" href="https://www.instagram.com/sumikumomo/" target="_blank">
+      Abrir perfil en Instagram
+    </a>
+  </div>
 </body>
 </html>
